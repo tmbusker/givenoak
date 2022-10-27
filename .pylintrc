@@ -1,0 +1,11 @@
+[MASTER]
+disable = C0114,    # missing module docstring
+          C0303,    # trailing-whitespace
+          E0611,    # no-name-in-module
+          E1101,    # Instance of 'ForeignKey' has no 'id' member
+          E1121,    # too-many-function-args
+          R0901,    # too-many-ancestors
+          R0903,    # too-few-public-methods
+
+[flake8]
+max-line-length = 120

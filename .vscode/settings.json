@@ -1,0 +1,46 @@
+{
+    "files.autoGuessEncoding": false,
+    "files.encoding": "utf8",
+    "pylint.args": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    
+    "cSpell.diagnosticLevel": "Hint",
+    "cSpell.words": [
+        "authadmin",
+        "authgroup",
+        "authuser",
+        "authusers",
+        "autouse",
+        "banchi",
+        "chunksize",
+        "commonsite",
+        "cteihijkb",
+        "dataframe",
+        "dateutil",
+        "deepdiff",
+        "dtype",
+        "HIJOKIN",
+        "kakari",
+        "kigo",
+        "kyoku",
+        "levelname",
+        "machiiki",
+        "machiikimei",
+        "mastersite",
+        "orgmember",
+        "psycopg",
+        "relativedelta",
+        "requestlogging",
+        "shikuchoson",
+        "shikuchosons",
+        "shitu",
+        "sjis",
+        "skippable",
+        "Syumoku",
+        "TEIIN",
+        "todofuken",
+        "urlresolvers"
+    ]
+}

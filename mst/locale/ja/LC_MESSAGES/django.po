@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-27 06:10+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\mst\admin\customer.py:13
+msgid "Elimination"
+msgstr "廃止"
+
+#: .\mst\admin\ido\common.py:9 .\mst\models\ido\ido_col.py:10
+#: .\mst\models\ido\ido_syumoku.py:41 .\mst\models\ido\ido_type.py:36
+msgid "定員・非常勤"
+msgstr ""
+
+#: .\mst\admin\ido\common.py:13 .\mst\admin\ido\common.py:35
+#: .\mst\admin\ido\common.py:56
+msgid "All"
+msgstr "全て"
+
+#: .\mst\admin\ido\common.py:31
+msgid "異動カテゴリ"
+msgstr ""
+
+#: .\mst\admin\ido\common.py:45 .\mst\models\ido\ido_syumoku.py:13
+#: .\mst\models\ido\ido_type.py:11 .\mst\models\ido\ido_type.py:18
+#: .\mst\models\ido\ido_type.py:19
+msgid "異動分類"
+msgstr ""
+
+#: .\mst\admin\ido\ido_syumoku.py:74 .\mst\models\ido\ido_syumoku.py:12
+#: .\mst\models\ido\ido_syumoku.py:23 .\mst\models\ido\ido_syumoku.py:24
+#: .\mst\models\ido\ido_syumoku_screen.py:10
+msgid "異動種目"
+msgstr ""
+
+#: .\mst\admin\ido\ido_syumoku_screen.py:34
+#: .\mst\models\ido\ido_syumoku_screen.py:11
+msgid "異動入力画面"
+msgstr ""
+
+#: .\mst\admin\ido\ido_syumoku_screen_col.py:32
+msgid "異動項目コード"
+msgstr ""
+
+#: .\mst\admin\ido\ido_type.py:28 .\mst\models\ido\ido_syumoku.py:16
+#: .\mst\models\ido\ido_type.py:13 .\mst\models\product.py:21
+msgid "display order"
+msgstr "表示順"
+
+#: .\mst\admin\product.py:12
+msgid "parent"
+msgstr "親"
+
+#: .\mst\admin\site.py:8 .\mst\admin\site.py:9 .\mst\admin\site.py:12
+#: .\mst\admin\site.py:17
+msgid "mstSite"
+msgstr "マスタデータ"
+
+#: .\mst\apps.py:8
+msgid "mst"
+msgstr "マスタデータ"
+
+#: .\mst\const.py:8
+msgid "定員"
+msgstr ""
+
+#: .\mst\const.py:9
+msgid "非常勤"
+msgstr ""
+
+#: .\mst\models\customer.py:32
+msgid "customer code"
+msgstr "顧客コード"
+
+#: .\mst\models\customer.py:33 .\mst\models\customer.py:42
+#: .\mst\models\project.py:22
+msgid "customer"
+msgstr "顧客"
+
+#: .\mst\models\customer.py:34 .\mst\models\ido\ido_syumoku.py:14
+#: .\mst\models\ido\ido_type.py:12 .\mst\models\product.py:18
+#: .\mst\models\project.py:21
+msgid "abbreviation"
+msgstr "略称"
+
+#: .\mst\models\customer.py:35
+msgid "kigo"
+msgstr "記号"
+
+#: .\mst\models\customer.py:36
+msgid "old name"
+msgstr "旧名称"
+
+#: .\mst\models\customer.py:37
+msgid "address"
+msgstr "住所"
+
+#: .\mst\models\customer.py:38 .\mst\models\ido\ido_syumoku.py:17
+#: .\mst\models\ido\ido_type.py:14 .\mst\models\product.py:26
+#: .\mst\models\project.py:25 .\mst\models\project.py:44
+msgid "comment"
+msgstr "備考"
+
+#: .\mst\models\customer.py:43
+msgid "customers"
+msgstr "顧客"
+
+#: .\mst\models\ido\ido_col.py:11
+msgid "項目番号"
+msgstr ""
+
+#: .\mst\models\ido\ido_col.py:12
+msgid "table id"
+msgstr "テーブルID"
+
+#: .\mst\models\ido\ido_col.py:13
+msgid "項目ID"
+msgstr ""
+
+#: .\mst\models\ido\ido_col.py:14
+msgid "項目名"
+msgstr ""
+
+#: .\mst\models\ido\ido_col.py:18 .\mst\models\ido\ido_col.py:19
+msgid "異動入力項目"
+msgstr ""
+
+#: .\mst\models\ido\ido_screen.py:9
+msgid "画面コード"
+msgstr ""
+
+#: .\mst\models\ido\ido_screen.py:10
+msgid "画面名"
+msgstr ""
+
+#: .\mst\models\ido\ido_screen.py:15 .\mst\models\ido\ido_screen.py:16
+msgid "異動情報入力画面"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku.py:11 .\mst\models\ido\ido_type.py:10
+msgid "code"
+msgstr "コード"
+
+#: .\mst\models\ido\ido_syumoku.py:15
+msgid "画面制御"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku.py:19
+msgid "任免異動種目区分"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen.py:16
+#: .\mst\models\ido\ido_syumoku_screen.py:17
+msgid "異動種目の入力画面"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:17
+msgid "必須(固定)"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:18
+msgid "必須"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:19
+msgid "任意"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:20
+msgid "表示のみ"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:21
+msgid "非表示"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:22
+msgid "非表示(固定)"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:25
+#: .\mst\models\ido\ido_syumoku_screen_col.py:26
+msgid "異動項目"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:28
+msgid "制御タイプ"
+msgstr ""
+
+#: .\mst\models\ido\ido_syumoku_screen_col.py:32
+#: .\mst\models\ido\ido_syumoku_screen_col.py:33
+msgid "異動種目の画面ごと入力項目"
+msgstr ""
+
+#: .\mst\models\product.py:13
+msgid "製品"
+msgstr ""
+
+#: .\mst\models\product.py:14
+msgid "オプション"
+msgstr ""
+
+#: .\mst\models\product.py:16
+msgid "product code"
+msgstr "製品コード"
+
+#: .\mst\models\product.py:17 .\mst\models\product.py:30
+#: .\mst\models\project.py:43
+msgid "product"
+msgstr "製品"
+
+#: .\mst\models\product.py:19
+msgid "summary"
+msgstr "製品概要"
+
+#: .\mst\models\product.py:20
+msgid "version"
+msgstr "版数"
+
+#: .\mst\models\product.py:23
+msgid "parent product"
+msgstr "親製品"
+
+#: .\mst\models\product.py:25
+msgid "product type"
+msgstr "製品分類"
+
+#: .\mst\models\product.py:31
+msgid "products"
+msgstr "製品"
+
+#: .\mst\models\project.py:19
+msgid "project code"
+msgstr "プロジェクトコード"
+
+#: .\mst\models\project.py:20 .\mst\models\project.py:29
+#: .\mst\models\project.py:42
+msgid "project"
+msgstr "プロジェクト"
+
+#: .\mst\models\project.py:23 .\mst\models\project.py:48
+#: .\mst\models\project.py:49
+msgid "project product"
+msgstr "関連製品"
+
+#: .\mst\models\project.py:24
+msgid "status"
+msgstr "状態"
+
+#: .\mst\models\project.py:30
+msgid "projects"
+msgstr "プロジェクト"

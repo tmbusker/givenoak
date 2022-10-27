@@ -1,0 +1,586 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-27 06:11+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\cmm\admin\base\filter.py:43
+msgid "valid flag"
+msgstr "有効性"
+
+#: .\cmm\admin\base\filter.py:47 .\cmm\admin\base\filter.py:90
+msgid "Valid"
+msgstr "有効"
+
+#: .\cmm\admin\base\filter.py:48
+msgid "Invalid"
+msgstr "無効"
+
+#: .\cmm\admin\base\filter.py:49 .\cmm\admin\base\filter.py:67
+#: .\cmm\admin\base\filter.py:89 .\cmm\admin\codes.py:45
+msgid "All"
+msgstr "すべて"
+
+#: .\cmm\admin\base\filter.py:63
+msgid "language"
+msgstr "言語"
+
+#: .\cmm\admin\base\filter.py:83
+msgid "valid at"
+msgstr "有効性"
+
+#: .\cmm\admin\base\filter.py:91
+msgid "Expired"
+msgstr "失効"
+
+#: .\cmm\admin\base\filter.py:92
+msgid "Valid in the future"
+msgstr "未来発効"
+
+#: .\cmm\admin\codes.py:41 .\cmm\models\codes.py:10 .\cmm\models\codes.py:15
+#: .\cmm\models\codes.py:29
+msgid "category"
+msgstr "コード種別"
+
+#: .\cmm\admin\employee.py:14 .\cmm\models\employee.py:43
+msgid "main duty organization"
+msgstr "本務組織"
+
+#: .\cmm\admin\employee.py:58
+msgid "You must specify one and only one main duty organization."
+msgstr "本務組織を一つだけ指定してください。"
+
+#: .\cmm\admin\employee.py:65
+msgid "You cannot have multiple main duty simultaneously."
+msgstr "本務組織は一つしか指定できません。"
+
+#: .\cmm\admin\organization.py:37 .\cmm\models\organization.py:10
+msgid "organization code"
+msgstr "組織コード"
+
+#: .\cmm\admin\organization.py:46
+msgid "rank"
+msgstr "階層"
+
+#: .\cmm\admin\organization.py:53 .\cmm\models\organization.py:17
+#: .\cmm\models\organization_rel.py:13
+msgid "parent organization"
+msgstr "上位組織"
+
+#: .\cmm\admin\person.py:15 .\cmm\models\employee.py:23
+#: .\cmm\models\employee.py:47
+msgid "employee"
+msgstr "職員"
+
+#: .\cmm\admin\site.py:15 .\cmm\admin\site.py:16 .\cmm\admin\site.py:19
+#: .\cmm\admin\site.py:25 .\cmm\apps.py:9
+msgid "cmm"
+msgstr "共通データ"
+
+#: .\cmm\csv\csv_import.py:24
+#, python-format
+msgid "There are too many errors to stop importing. [File: %(file_name)s]"
+msgstr ""
+"エラー発生件数が指定制限を超えたため、%(file_name)sのインポート処理を中止しま"
+"す。"
+
+#: .\cmm\csv\csv_import.py:110
+msgid "Newly imported row."
+msgstr "新規インポート行"
+
+#: .\cmm\csv\csv_import.py:119
+msgid "Update existing row."
+msgstr "既存行の更新"
+
+#: .\cmm\csv\csv_import.py:160 .\cmm\csv\csv_import.py:167
+#, python-format
+msgid "Duplicated with another row.[row no: %(row_no)s.]"
+msgstr "%(row_no)s行目と重複しております。"
+
+#: .\cmm\csv\csv_import_admin.py:23
+msgid "File to upload"
+msgstr "ファイルアップロード"
+
+#: .\cmm\csv\csv_import_admin.py:74 .\cmm\templates\admin\change_list.html:17
+#: .\cmm\templates\cmm\change_list_with_csv_import.html:17
+#: .\cmm\templates\cmm\csv_import.html:9
+#: .\cmm\templates\cmm\csv_import_error.html:9
+#, python-format
+msgid "Import %(name)s"
+msgstr "%(name)sのインポート"
+
+#: .\cmm\csv\csv_import_admin.py:110
+#, python-format
+msgid ""
+"Import result: imported %(imp)s rows, skipped %(skip)s rows and discarded: "
+"%(dis)s rows."
+msgstr ""
+"取込結果：インポート行数：%(imp)s、読飛行数：%(skip)s、エラー行数：%(dis)s。"
+
+#: .\cmm\csv\csv_import_admin.py:114
+#, python-format
+msgid "%(name)s import errors"
+msgstr "%(name)s取込エラー"
+
+#: .\cmm\csv\csv_log.py:13
+msgid "Information"
+msgstr "情報"
+
+#: .\cmm\csv\csv_log.py:14
+msgid "Warning"
+msgstr "警告"
+
+#: .\cmm\csv\csv_log.py:15
+msgid "Error"
+msgstr "エラー"
+
+#: .\cmm\csv\csv_log.py:22
+msgid "Csv Import"
+msgstr "インポート"
+
+#: .\cmm\csv\csv_log.py:23
+msgid "Csv Export"
+msgstr "エクスポート"
+
+#: .\cmm\csv\csv_log.py:30
+msgid "insert"
+msgstr "作成"
+
+#: .\cmm\csv\csv_log.py:31
+msgid "update"
+msgstr "更新"
+
+#: .\cmm\csv\csv_log.py:36
+msgid "csv log level"
+msgstr "CSVログレベル"
+
+#: .\cmm\csv\csv_log.py:38
+msgid "csv log type"
+msgstr "CSVログ分類"
+
+#: .\cmm\csv\csv_log.py:40
+msgid "csv edit type"
+msgstr "CSV編集分類"
+
+#: .\cmm\csv\csv_log.py:41
+msgid "file name"
+msgstr "ファイル名"
+
+#: .\cmm\csv\csv_log.py:42
+msgid "row no"
+msgstr "行番号"
+
+#: .\cmm\csv\csv_log.py:43
+msgid "row content"
+msgstr "行内容"
+
+#: .\cmm\csv\csv_log.py:44
+msgid "message"
+msgstr "メッセージ"
+
+#: .\cmm\csv\csv_log.py:45 .\cmm\models\base\simple_table.py:14
+msgid "creator"
+msgstr "作成者"
+
+#: .\cmm\csv\csv_log.py:46 .\cmm\models\base\simple_table.py:13
+msgid "create time"
+msgstr "作成時間"
+
+#: .\cmm\csv\csv_log.py:47
+msgid "lot number"
+msgstr "ロット"
+
+#: .\cmm\csv\csv_log.py:51
+msgid "csv log"
+msgstr "CSVログ"
+
+#: .\cmm\csv\csv_log.py:52
+msgid "csv logs"
+msgstr "CSVログ"
+
+#: .\cmm\models\base\admin.py:9 .\cmm\models\employee.py:18
+msgid "authorization user"
+msgstr "アカウント"
+
+#: .\cmm\models\base\admin.py:10
+msgid "authorization users"
+msgstr "アカウント"
+
+#: .\cmm\models\base\admin.py:16 .\cmm\models\base\admin.py:17
+msgid "authorization group"
+msgstr "権限グループ"
+
+#: .\cmm\models\base\history_table.py:32
+msgid "valid from"
+msgstr "有効開始日"
+
+#: .\cmm\models\base\history_table.py:33
+msgid "valid through"
+msgstr "有効終了日"
+
+#: .\cmm\models\base\history_table.py:142
+#, python-format
+msgid "You cannot edit a record with expired date %(valid_through)s."
+msgstr "%(valid_through)sに失効した過去レコードを編集することはできません。"
+
+#: .\cmm\models\base\history_table.py:180
+#, python-format
+msgid "You cannot specify a staled date %(valid_from)s as a start date."
+msgstr "過去日付%(valid_from)sを有効開始日と指定することはできません。"
+
+#: .\cmm\models\base\history_table.py:190
+#, python-format
+msgid "You cannot edit a record that expired at %(valid_through)s."
+msgstr "%(valid_through)sに失効した過去レコードを編集することはできません。"
+
+#: .\cmm\models\base\simple_table.py:15
+msgid "update time"
+msgstr "更新時間"
+
+#: .\cmm\models\base\simple_table.py:16
+msgid "updater"
+msgstr "更新者"
+
+#: .\cmm\models\base\simple_table.py:17
+msgid "valid"
+msgstr "有効"
+
+#: .\cmm\models\base\versioned_table.py:9
+msgid "version"
+msgstr "バージョン"
+
+#: .\cmm\models\base\versioned_table.py:23
+msgid "Race condition was detected. Confirm the content and try again later."
+msgstr ""
+"他の人によりすでに変更された可能性があります。内容を再確認してから編集してく"
+"ださい。"
+
+#: .\cmm\models\city.py:9
+msgid "city code"
+msgstr "市区町村コード"
+
+#: .\cmm\models\city.py:10
+msgid "city"
+msgstr "市区町村"
+
+#: .\cmm\models\city.py:11
+msgid "city kana"
+msgstr "カナ"
+
+#: .\cmm\models\city.py:12 .\cmm\models\shikuchoson.py:12
+msgid "todofuken"
+msgstr "都道府県"
+
+#: .\cmm\models\city.py:13 .\cmm\models\shikuchoson.py:13
+msgid "todofuken kana"
+msgstr "都道府県名(カナ)"
+
+#: .\cmm\models\city.py:17 .\cmm\models\person.py:23
+#: .\cmm\models\shikuchoson.py:10 .\cmm\models\shikuchoson.py:17
+#: .\cmm\models\zipcode.py:11
+msgid "shikuchoson"
+msgstr "市区町村"
+
+#: .\cmm\models\city.py:18 .\cmm\models\shikuchoson.py:18
+msgid "shikuchosons"
+msgstr "市区町村"
+
+#: .\cmm\models\codes.py:11
+msgid "category name"
+msgstr "コード種別名"
+
+#: .\cmm\models\codes.py:16
+msgid "categories"
+msgstr "コード種別"
+
+#: .\cmm\models\codes.py:30 .\cmm\models\codes.py:37
+msgid "code"
+msgstr "コード"
+
+#: .\cmm\models\codes.py:31
+msgid "code name"
+msgstr "コード名"
+
+#: .\cmm\models\codes.py:32 .\cmm\models\organization.py:12
+msgid "abbreviation"
+msgstr "略称"
+
+#: .\cmm\models\codes.py:33
+msgid "display order"
+msgstr "表示順"
+
+#: .\cmm\models\codes.py:38
+msgid "codes"
+msgstr "コード"
+
+#: .\cmm\models\employee.py:10
+msgid "employee code"
+msgstr "職員番号"
+
+#: .\cmm\models\employee.py:11
+msgid "name"
+msgstr "名前"
+
+#: .\cmm\models\employee.py:12
+msgid "name kana"
+msgstr "名前(カナ)"
+
+#: .\cmm\models\employee.py:13 .\cmm\models\person.py:18
+msgid "email"
+msgstr "Eメール"
+
+#: .\cmm\models\employee.py:14
+msgid "employ date"
+msgstr "採用日"
+
+#: .\cmm\models\employee.py:15
+msgid "resign date"
+msgstr "退職日"
+
+#: .\cmm\models\employee.py:16
+msgid "resign reason"
+msgstr "退職理由"
+
+#: .\cmm\models\employee.py:19 .\cmm\models\employee.py:48
+#: .\cmm\models\organization.py:11 .\cmm\models\organization.py:21
+#: .\cmm\models\organization_rel.py:11
+msgid "organization"
+msgstr "組織"
+
+#: .\cmm\models\employee.py:24
+msgid "employees"
+msgstr "職員"
+
+#: .\cmm\models\employee.py:49
+msgid "is main duty"
+msgstr "本務"
+
+#: .\cmm\models\employee.py:50
+msgid "is manager"
+msgstr "管理者"
+
+#: .\cmm\models\employee.py:51
+msgid "is staff"
+msgstr "スタッフ"
+
+#: .\cmm\models\employee.py:55
+msgid "membership"
+msgstr "所属"
+
+#: .\cmm\models\employee.py:56
+msgid "memberships"
+msgstr "所属"
+
+#: .\cmm\models\organization.py:15
+msgid "organization hierarchy"
+msgstr "組織階層"
+
+#: .\cmm\models\organization.py:22
+msgid "organizations"
+msgstr "組織"
+
+#: .\cmm\models\organization_rel.py:17 .\cmm\models\organization_rel.py:18
+msgid "organization relation"
+msgstr "所属組織"
+
+#: .\cmm\models\person.py:10
+msgid "first name"
+msgstr "名"
+
+#: .\cmm\models\person.py:11
+msgid "middle name"
+msgstr "ミドル名"
+
+#: .\cmm\models\person.py:12
+msgid "last name"
+msgstr "姓"
+
+#: .\cmm\models\person.py:13
+msgid "名（カナ）"
+msgstr ""
+
+#: .\cmm\models\person.py:14
+msgid "姓（カナ）"
+msgstr ""
+
+#: .\cmm\models\person.py:15
+msgid "birth day"
+msgstr "誕生日"
+
+#: .\cmm\models\person.py:17
+msgid "sex"
+msgstr "性別"
+
+#: .\cmm\models\person.py:19
+msgid "phone number"
+msgstr "電話番号"
+
+#: .\cmm\models\person.py:20
+msgid "mobile phone"
+msgstr "携帯番号"
+
+#: .\cmm\models\person.py:21 .\cmm\models\zipcode.py:9
+#: .\cmm\models\zipcode.py:17 .\cmm\models\zipcode.py:18
+msgid "zipcode"
+msgstr "郵便番号"
+
+#: .\cmm\models\person.py:24
+msgid "address"
+msgstr "住所"
+
+#: .\cmm\models\person.py:25
+msgid "my number"
+msgstr "マイナンバー"
+
+#: .\cmm\models\person.py:29
+msgid "person"
+msgstr "個人"
+
+#: .\cmm\models\person.py:30
+msgid "persons"
+msgstr "個人"
+
+#: .\cmm\models\shikuchoson.py:9
+msgid "shikuchoson code"
+msgstr "市区町村コード"
+
+#: .\cmm\models\shikuchoson.py:11
+msgid "shikuchoson kana"
+msgstr "市区町村名(カナ)"
+
+#: .\cmm\models\zipcode.py:12
+msgid "町域名"
+msgstr "町域名"
+
+#: .\cmm\models\zipcode.py:13
+msgid "町域名（カナ）"
+msgstr "町域名（カナ）"
+
+#: .\cmm\templates\admin\app_list.html:10
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr "%(name)sのモデル一覧"
+
+#: .\cmm\templates\admin\app_list.html:21
+msgid "Add"
+msgstr "新規追加"
+
+#: .\cmm\templates\admin\app_list.html:28
+msgid "View"
+msgstr "参照"
+
+#: .\cmm\templates\admin\app_list.html:30
+msgid "Change"
+msgstr "編集"
+
+#: .\cmm\templates\admin\app_list.html:41
+msgid "You don’t have permission to view or edit anything."
+msgstr "参照または編集する権限がありません。"
+
+#: .\cmm\templates\admin\change_list.html:10
+#: .\cmm\templates\cmm\change_list_with_csv_import.html:10
+#, python-format
+msgid "Add %(name)s"
+msgstr "%(name)sの追加"
+
+#: .\cmm\templates\admin\submit_line.html:6
+msgid "Close"
+msgstr "閉じる"
+
+#: .\cmm\templates\admin\submit_line.html:7
+msgid "Save"
+msgstr "保存"
+
+#: .\cmm\templates\admin\submit_line.html:8
+msgid "Save as new"
+msgstr "新規保存"
+
+#: .\cmm\templates\admin\submit_line.html:9
+msgid "Save and add another"
+msgstr "保存後新規追加"
+
+#: .\cmm\templates\admin\submit_line.html:10
+msgid "Save and continue editing"
+msgstr "保存後引続編集"
+
+#: .\cmm\templates\admin\submit_line.html:10
+msgid "Save and view"
+msgstr "保存と参照"
+
+#: .\cmm\templates\admin\submit_line.html:13
+msgid "Delete"
+msgstr "削除"
+
+#: .\cmm\templates\cmm\csv_import.html:6
+#: .\cmm\templates\cmm\csv_import_error.html:6
+msgid "Home"
+msgstr "ホーム"
+
+#: .\cmm\templates\cmm\csv_import.html:20
+msgid "Please correct the error below."
+msgstr "下記のエラーを修正してください。"
+
+#: .\cmm\templates\cmm\csv_import.html:20
+msgid "Please correct the errors below."
+msgstr "下記のエラーを修正してください。"
+
+#: .\cmm\templates\cmm\csv_import.html:29
+msgid "Upload"
+msgstr "アップロード"
+
+#: .\cmm\templates\cmm\csv_import_error.html:23
+msgid "Row No"
+msgstr "行番号"
+
+#: .\cmm\templates\cmm\csv_import_error.html:27
+msgid "Error Message"
+msgstr "エラーメッセージ"
+
+#: .\cmm\templates\cmm\site_index.html:23
+msgid "Recent actions"
+msgstr "最近の作業"
+
+#: .\cmm\templates\cmm\site_index.html:24
+msgid "My actions"
+msgstr "自分の作業"
+
+#: .\cmm\templates\cmm\site_index.html:28
+msgid "None available"
+msgstr "参照不可"
+
+#: .\cmm\templates\cmm\site_index.html:42
+msgid "Unknown content"
+msgstr "不明な内容"
+
+#: .\cmm\utils\adminsite.py:13
+#, python-format
+msgid ""
+"Please enter the correct %(username)s and password for a superuser account. "
+"Note that both fields may be case-sensitive."
+msgstr "%(username)sの正しいユーザー名とパスワードを入力したください。"
+
+#: .\cmm\utils\validation.py:10
+#, python-format
+msgid ""
+"The period start date %(valid_from)s must be older then end date "
+"%(valid_through)s."
+msgstr ""
+"有効開始日%(valid_from)sは有効終了日%(valid_through)sより古い日付を指定してく"
+"ださい。"
+
+#~ msgid "Export as CSV file"
+#~ msgstr "CSVエクスポート"
