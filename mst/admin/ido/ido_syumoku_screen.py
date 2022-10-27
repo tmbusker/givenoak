@@ -7,7 +7,6 @@ from cmm.forms import SimpleModelForm
 from cmm.admin.base import CommonBaseTableAminMixin
 from mst.admin.ido import IdoSyumokuScreenColAdmin
 from mst.models.ido import IdoSyumokuScreen
-from mst.admin import mstSite
 
 
 class IdoSyumokuScreenForm(SimpleModelForm):
@@ -24,7 +23,6 @@ class IdoSyumokuScreenInline(admin.TabularInline):
 
     fields = ['ido_screen_link', 'ido_syumoku', 'ido_screen']
     readonly_fields = ('ido_screen_link', )
-    autocomplete_fields = ['ido_screen']
 
     def get_queryset(self, request):
         """所属に絞る"""
@@ -40,7 +38,6 @@ class IdoSyumokuScreenInline(admin.TabularInline):
         url = reverse(f'{site}:{app}_{model}_change', args=(instance.id,))
         return format_html('<a href="{}">{}</a>', url, instance.ido_screen.screen_code)
 
-@admin.register(IdoSyumokuScreen, site=mstSite)
 class IdoSyumokuScreenAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """異動種目ごとの入力画面"""
     form = IdoSyumokuScreenForm

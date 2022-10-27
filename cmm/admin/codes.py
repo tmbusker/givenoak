@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter, CommonFilter
 from cmm.forms import SimpleModelForm
 from cmm.models import Category, Code
-from mst.admin import mstSite
 
 
 class CodeForm(SimpleModelForm):
@@ -55,7 +54,7 @@ class CategoryForm(SimpleModelForm):
     """ModeFormの設定"""
     html_readonly_fields = ('category',)
 
-@register(Category, site=mstSite)
+
 class CategoryModelAdmin(CommonBaseTableAminMixin, ModelAdmin):
     """CategoryをadminSiteに表示する"""
     form = CategoryForm
@@ -80,7 +79,6 @@ class CodeCategoryFilter(CategoryFilter):
 
         return queryset.filter(category__category=self.value())
 
-@register(Code, site=mstSite)
 class CodeModelAdmin(CommonBaseTableAminMixin, ModelAdmin):
     """CodeをadminSiteに表示する"""
     fields = ['category', ('code', 'name', 'abbr', 'display_order'), 'valid_flag']

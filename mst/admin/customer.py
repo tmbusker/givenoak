@@ -4,7 +4,6 @@ from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
 from mst.models import Customer
-from mst.admin import mstSite
 
 
 class CustomerValidAtFilter(admin.SimpleListFilter):
@@ -21,7 +20,6 @@ class CustomerValidAtFilter(admin.SimpleListFilter):
 
         return super().queryset(request, queryset).filter(valid_flag=False)
 
-# @admin.register(Customer, site=mstSite)
 class CustomerAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('name', 'code'), ('abbr', 'old_name'), 'kigo', 'address', 'comment', 'valid_flag']

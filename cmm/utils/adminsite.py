@@ -1,9 +1,22 @@
+from typing import Any, List
+from wsgiref.simple_server import WSGIRequestHandler
 from django.contrib import admin
 from django.contrib.admin.forms import AdminAuthenticationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
+
+class CmmAdminSiteMixin:
+    """AdminSiteのカスタマイズ"""
+    enable_nav_sidebar = True
+    _empty_value_display = '-'
+
+    def get_app_list(self, request: WSGIRequestHandler) -> List[Any]:
+        """Sidebarに表示する内容をカスタマイズ"""
+        applist = super().get_app_list(request)
+        
+        return applist
 
 class SuperUserAuthenticationForm(AdminAuthenticationForm):
     """Only superuser is available."""
@@ -26,7 +39,7 @@ class SuperUserAuthenticationForm(AdminAuthenticationForm):
             )
         super().confirm_login_allowed(user)
 
-class SuperUserAdminSite(admin.AdminSite):
+class SuperUserAdminSite(CmmAdminSiteMixin, admin.AdminSite):
     """Only superuser is available."""
     login_form = SuperUserAuthenticationForm
 
@@ -34,10 +47,8 @@ class SuperUserAdminSite(admin.AdminSite):
         """Give permission to superuser only."""
         return request.user.is_superuser
 
-class ActiveUserAdminSite(admin.AdminSite):
+class ActiveUserAdminSite(CmmAdminSiteMixin, admin.AdminSite):
     """All active users are available."""
-    enable_nav_sidebar = True
-    _empty_value_display = '-'
 
     login_form = AuthenticationForm
 

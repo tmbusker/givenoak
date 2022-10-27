@@ -2,11 +2,9 @@ from typing import Any, Dict, Tuple
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
-from mst.admin import mstSite
 from mst.admin.ido import IdoCategoryFilter, TeiinHijokinFilter, IdoSyumokuInline
-from mst.models.ido import IdoType, get_ido_type_code
+from mst.models.ido import get_ido_type_code
 
-@admin.register(IdoType, site=mstSite)
 class IdoTypeAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('name', 'code', 'display_order','valid_flag')]

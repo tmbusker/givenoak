@@ -8,12 +8,10 @@ from django.utils.html import format_html
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
 from cmm.forms import SimpleModelForm
 from mst.models import IdoSyumoku, IdoType, get_ido_type_code
-from mst.admin import mstSite
 from mst.admin.ido import (IdoSyumokuIdoCategoryFilter, 
                            IdoSyumokuScreenInline, IdoSyumokuTeiinHijokinFilter, IdoTypeFilter)
 
 
-@admin.register(IdoSyumoku, site=mstSite)
 class IdoSyumokuAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('ido_type', 'code', 'nnmn_ido_cde'), ('name', 'display_order', 'valid_flag')]

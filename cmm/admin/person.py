@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 from django.db import connection, transaction
 from django.utils.translation import get_language
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
-from cmm.admin import cmmSite
 from cmm.models import Employee, Person, Code, ZipCode
 
 
@@ -14,7 +13,6 @@ class EmployeeInline(admin.StackedInline):
     can_delete = False
     verbose_name_plural = _('employee')
 
-@admin.register(Person, site=cmmSite)
 class PersonAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = ['last_name', 'first_name', 'last_name_kana', 'first_name_kana','birthday','sex','email',

@@ -3,9 +3,8 @@ from django.contrib import admin
 from cmm.const import SJIS, EXCEL_FILE_EXT
 from cmm.models import Shikuchoson
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
-from cmm.admin import cmmSite
 
-@admin.register(Shikuchoson, site=cmmSite)
+
 class ShikuchosonModelAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """市区町村をAdminSiteに表示する"""
     fields = ['code', ('pref_name', 'pref_name_kana'), ('name', 'name_kana'), 'valid_flag']

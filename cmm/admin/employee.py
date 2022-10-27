@@ -6,7 +6,6 @@ from django.utils.translation import gettext_lazy as _
 from cmm.admin.base import CommonFilter, CommonBaseTableAminMixin, ValidFilter
 from cmm.models import OrgMember, Employee, get_all_upper_organizations
 from cmm.utils.date import Period, flat_overlap
-from mst.admin import mstSite
 
 
 class AffiliationListFilter(CommonFilter):
@@ -101,7 +100,6 @@ class OrgMemberInline(admin.TabularInline):
             return None
         return OrgMember.objects.filter(employee_id=employee_id)
 
-@admin.register(Employee, site=mstSite)
 class EmployeeAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('name', 'code'), 'email', 'valid_flag']

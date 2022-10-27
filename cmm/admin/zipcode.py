@@ -1,11 +1,9 @@
 from typing import Tuple
 from django.contrib import admin
-from cmm.models import Shikuchoson, ZipCode
-from cmm.admin import cmmSite
+from cmm.models import Shikuchoson
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
 
 
-@admin.register(ZipCode, site=cmmSite)
 class ZipCodeModelAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """郵便番号をAdminSiteに表示する"""
     fields = ['zipcode', 'shikuchoson', 'machiikimei', 'machiikimei_kana', 'valid_flag']

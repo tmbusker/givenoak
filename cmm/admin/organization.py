@@ -9,7 +9,6 @@ from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
 from cmm.forms import SimpleModelForm
 from cmm.models import Organization, Code, get_all_upper_organizations
 from cmm.models.organization_rel import OrganizationRel
-from mst.admin import mstSite
 
 
 class ChildOrgForm(SimpleModelForm):
@@ -67,7 +66,6 @@ class ParentOrganizationListFilter(admin.SimpleListFilter):
 
         return queryset.filter(child__parent_id=self.value())
 
-@admin.register(Organization, site=mstSite)
 class OrganizationAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('name', 'code', 'abbr'), ('rank', 'valid_flag')]
@@ -111,7 +109,6 @@ class OrganizationRelListFilter(ParentOrganizationListFilter):
 
         return queryset.filter(parent_id=self.value())
 
-@admin.register(OrganizationRel, site=mstSite)
 class OrganizationRelAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('parent', 'org', 'valid_flag')]

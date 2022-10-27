@@ -1,7 +1,6 @@
 from django.contrib import admin
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
-from mst.models import ProjectProduct, Project
-from mst.admin import mstSite
+from mst.models import ProjectProduct
 
 
 class ProjectProductInline(admin.TabularInline):
@@ -15,7 +14,6 @@ class ProjectProductInline(admin.TabularInline):
     # ※参考 検索フィールド＋Select Box
     autocomplete_fields = ['product']
 
-# @admin.register(Project, site=mstSite)
 class ProjectAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('name', 'code'), 'customer', 'valid_flag']

@@ -4,7 +4,6 @@ from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
 from mst.models import Product
-from mst.admin import mstSite
 
 
 class ParentListFilter(admin.SimpleListFilter):
@@ -25,7 +24,6 @@ class ParentListFilter(admin.SimpleListFilter):
 
         return queryset.filter(Q(parent__id=self.value())|Q(id=self.value()))
 
-# @admin.register(Product, site=mstSite)
 class ProductAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = [('name', 'code'), ('abbr', 'parent'), ('product_type', 'display_order'),

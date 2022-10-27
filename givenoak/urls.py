@@ -18,14 +18,14 @@ from django.urls import path
 from django.views.generic.base import RedirectView
 from cmm.admin import cmmSite
 from mst.admin import mstSite
-from jinji.admin import jinji
+from jinji.admin import jinjiSite
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('commonsite/', cmmSite.urls, name='commonsite'),
     path('mastersite/', mstSite.urls, name='mastersite'),
-    path('jinji/', jinji.urls, name='jinji'),
+    path('jinji/', jinjiSite.urls, name='jinji'),
     path('', RedirectView.as_view(url='/jinji')),
     # path('', RedirectView.as_view(url='/admin')),
 ]
