@@ -12,9 +12,9 @@ class CmmAdminSiteMixin:
     enable_nav_sidebar = True
     _empty_value_display = '-'
 
-    def get_app_list(self, request: WSGIRequestHandler) -> List[Any]:
+    def get_app_list(self, request: WSGIRequestHandler, app_label=None) -> List[Any]:
         """Sidebarに表示する内容をカスタマイズ"""
-        applist = super().get_app_list(request)
+        applist = super().get_app_list(request, app_label)
         
         return applist
 
