@@ -1,11 +1,22 @@
 {
+    // file
     "files.autoGuessEncoding": false,
     "files.encoding": "utf8",
+    
+    // python
     "pylint.args": [
         "--load-plugins",
         "pylint_django"
     ],
-    
+    "python.terminal.focusAfterLaunch": false,
+
+    "[html]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+     }
+
+    // spell
     "cSpell.diagnosticLevel": "Hint",
     "cSpell.words": [
         "authadmin",

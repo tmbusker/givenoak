@@ -1,8 +1,9 @@
 from typing import Tuple
 from django.contrib import messages
-from django.forms import ValidationError
+from django import forms
 from django.http import HttpResponseRedirect
 from django.utils import timezone
+from django.conf import settings
 
 
 class SimpleTableAminMixin():
@@ -34,7 +35,7 @@ class SimpleTableAminMixin():
         """Override ModelAdmin's same method"""
         try:
             return super().change_view(request, object_id, form_url, extra_context)
-        except ValidationError as error:
+        except forms.ValidationError as error:
             self.message_user(request, '.'.join(error.messages), level=messages.ERROR)
             return HttpResponseRedirect(request.path)
 

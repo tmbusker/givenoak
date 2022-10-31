@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mst',
     'simple_history',
-    'django_bootstrap5',
     'jinji',
 ]
 

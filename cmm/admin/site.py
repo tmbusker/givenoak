@@ -24,19 +24,19 @@ class AuthGroupAdmin(ExportAdminMixin, CsvImportAdminMixin, GroupAdmin):
 # class cmmAdminSite(admin.AdminSite):
 class CmmAdminSite(ActiveUserAdminSite):
     """ AdminSiteのカスタマイズ"""
-    site_title = _('cmm')
-    site_header = _('cmm')
+    site_title = _('cmmSite')
+    site_header = _('cmHeader')
     # site_url = None
-    index_title = _('cmm')
+    index_title = _('cmmIndexTitle')
 
     def index(self, request, extra_context=None):
         context = {
             **self.each_context(request),
-            'title': _('cmm'),
+            'title': _('cmmTitle'),
             'app_list': self.get_app_list(request),
         }
 
-        return render(request, 'cmm/site_index.html', context=context)
+        return render(request, 'admin/index.html', context=context)
 
 # override default admin site
 cmmSite = CmmAdminSite(name='cmmSite')

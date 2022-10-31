@@ -32,7 +32,7 @@ class MasterDataAdminSite(SuperUserAdminSite):
             'app_list': self.get_app_list(request),
         }
 
-        return render(request, 'cmm/site_index.html', context=context)
+        return render(request, 'admin/index.html', context=context)
 
 # override default admin site
 mstSite = MasterDataAdminSite(name='mstSite')

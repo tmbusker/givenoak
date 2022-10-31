@@ -1,4 +1,5 @@
 from django.utils.translation import gettext_lazy as _
+from django.shortcuts import render
 from cmm.utils.adminsite import ActiveUserAdminSite
 from cmm.const import EXPORT_CSV, EXPORT_EXCEL
 from cmm.csv.export import export_excel, export_csv
@@ -23,6 +24,15 @@ class JinjiAdminSite(ActiveUserAdminSite):
     # site_url = None
 
     index_title = _('jinji')
+
+    def index(self, request, extra_context=None):
+        context = {
+            **self.each_context(request),
+            'title': _('jinji'),
+            'app_list': self.get_app_list(request),
+        }
+
+        return render(request, 'admin/index.html', context=context)
 
 # override default admin site
 jinjiSite = JinjiAdminSite(name='jinji')

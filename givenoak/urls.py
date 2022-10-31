@@ -23,8 +23,8 @@ from jinji.admin import jinjiSite
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('commonsite/', cmmSite.urls, name='commonsite'),
-    path('mastersite/', mstSite.urls, name='mastersite'),
+    # path('commonsite/', cmmSite.urls, name='commonsite'),
+    # path('mastersite/', mstSite.urls, name='mastersite'),
     path('jinji/', jinjiSite.urls, name='jinji'),
     path('', RedirectView.as_view(url='/jinji')),
     # path('', RedirectView.as_view(url='/admin')),
