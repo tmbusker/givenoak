@@ -17,8 +17,9 @@ a.link-button {
     color: var(--button-fg);
 }
 
-.submit-row input {
-    float: right;
+.submit-row a.deletelink {
+    display: inline-flex;
+    float: left;
 }
 
 /* html_readonly_field */
@@ -33,5 +34,10 @@ td.original p {
 }
  
 .inline-group .tabular tr.has_original td {
-    padding: 5px 0 4px 0;
+    padding-top: 5px;
+    padding-bottom: 4px;
+}
+
+.submit-row a.closelink {
+    margin-bottom: 5px;
 }

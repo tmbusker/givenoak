@@ -7,7 +7,7 @@ from mst.models.ido import IdoSyumoku
 class Dkido(SimpleTable, models.Model):
     """異動情報"""
     ido_syumoku = models.ForeignKey(IdoSyumoku, on_delete=models.DO_NOTHING,
-                                     blank=True, null=True, verbose_name=_('異動種目'))
+                                     blank=False, verbose_name=_('異動種目'))
     cshainno = models.CharField(max_length=32, blank=False, verbose_name=_('職員番号'))
     dhtreingb_dte = models.DateField(blank=True, null=True, verbose_name=_('発令年月日'))
     nnmn_ido_cde = models.CharField(max_length=80, blank=True, null=True)
