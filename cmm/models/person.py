@@ -34,5 +34,5 @@ class Person(CommonBaseTable, models.Model):
 
         constraints = [
             models.UniqueConstraint(name = db_table + '_unique',
-                                    fields = ['first_name', 'last_name', 'birthday', 'zipcode']),
+                                    fields = ['first_name', 'last_name', 'birthday']),
         ]

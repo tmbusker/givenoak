@@ -1,6 +1,9 @@
 import json
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+
+from cmm.const import UTF8
 
 
 class CsvLog(models.Model):
@@ -43,7 +46,7 @@ class CsvLog(models.Model):
     row_content = models.TextField(blank = True, null=True, verbose_name = _('row content'))
     message = models.CharField(max_length = 2048, blank = True, null=True, verbose_name = _('message'))
     creator = models.CharField(max_length = 120, blank = True, null=True, verbose_name = _('creator'))
-    create_time = models.DateTimeField(blank = True, null=True, verbose_name = _('create time'))
+    create_time = models.DateTimeField(blank = True, null=True, default=timezone.now, verbose_name = _('create time'))
     lot_number = models.CharField(max_length = 64, blank=True, null=True, verbose_name=_('lot number'))
 
     class Meta:
@@ -56,7 +59,7 @@ class CsvLog(models.Model):
     
     def convert_content2json(self):
         """json型に変換する"""
-        self.row_content = json.dumps(self.row_content)
+        self.row_content = json.dumps(self.row_content, ensure_ascii=False)
         return self
     
     def convert_content2dict(self):

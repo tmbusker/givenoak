@@ -1,5 +1,5 @@
 from typing import Any, Dict, Tuple
-from django.contrib.admin import register, ModelAdmin, TabularInline
+from django.contrib.admin import ModelAdmin, TabularInline
 from django.http.request import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter, CommonFilter
@@ -83,7 +83,7 @@ class CodeModelAdmin(CommonBaseTableAminMixin, ModelAdmin):
     """CodeをadminSiteに表示する"""
     fields = ['category', ('code', 'name', 'abbr', 'display_order'), 'valid_flag']
     list_display = ('category', 'code', 'name', 'abbr', 'display_order', 'valid_flag')
-    search_fields = ['category', 'name', 'abbr']
+    search_fields = ['category__name', 'name', 'abbr']
     list_display_links = None
     list_filter = (CodeCategoryFilter, ValidFilter)
     ordering = ['category', 'display_order']

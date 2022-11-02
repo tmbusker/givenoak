@@ -3,7 +3,6 @@ from django.contrib import messages
 from django import forms
 from django.http import HttpResponseRedirect
 from django.utils import timezone
-from django.conf import settings
 
 
 class SimpleTableAminMixin():

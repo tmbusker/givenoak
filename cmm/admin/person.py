@@ -2,9 +2,9 @@ from typing import Tuple
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from django.db import connection, transaction
-from django.utils.translation import get_language
-from cmm.admin.base import CommonBaseTableAminMixin, ValidFilter
-from cmm.models import Employee, Person, Code, ZipCode
+from cmm.admin.base import SimpleTableAminMixin, ValidFilter
+from cmm.csv import CsvBulkImportMixin, CsvImportAdminMixin, ExportAdminMixin
+from cmm.models import Employee, Code, ZipCode
 
 
 class EmployeeInline(admin.StackedInline):
@@ -13,7 +13,7 @@ class EmployeeInline(admin.StackedInline):
     can_delete = False
     verbose_name_plural = _('employee')
 
-class PersonAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
+class PersonAdmin(SimpleTableAminMixin, ExportAdminMixin, CsvImportAdminMixin, CsvBulkImportMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""
     fields = ['last_name', 'first_name', 'last_name_kana', 'first_name_kana','birthday','sex','email',
               'phone_number','mobile','zipcode','address','my_number', 'valid_flag']
@@ -34,7 +34,7 @@ class PersonAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     def csv2model(self, csv_dict: dict, *args, **kwargs) -> dict:
         model_dict = super().csv2model(csv_dict, *args, **kwargs)
         # CSVにて性別の略称が設定されている場合の対応
-        model_dict['sex'] = Code.objects.filter(abbr=csv_dict.get('sex'), lang=get_language()).first()
+        model_dict['sex'] = Code.objects.filter(category__category='sex', abbr=csv_dict.get('sex')).first()
         # CSVにて郵便番号が設定されている場合の対応
         zipcode = ZipCode.objects.filter(zipcode=csv_dict['zipcode'].replace('-', '')).first()
         model_dict['zipcode'] = zipcode

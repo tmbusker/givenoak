@@ -1,5 +1,6 @@
 [MASTER]
 disable = C0114,    # missing module docstring
+          C0116,    # missing function docstring
           C0303,    # trailing-whitespace
           E0611,    # no-name-in-module
           E1101,    # Instance of 'ForeignKey' has no 'id' member

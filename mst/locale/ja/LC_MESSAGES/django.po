@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-27 06:10+0900\n"
+"POT-Creation-Date: 2022-11-02 15:33+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\mst\admin\customer.py:13
+#: .\mst\admin\customer.py:12
 msgid "Elimination"
 msgstr "廃止"
 
@@ -42,13 +42,13 @@ msgstr ""
 msgid "異動分類"
 msgstr ""
 
-#: .\mst\admin\ido\ido_syumoku.py:74 .\mst\models\ido\ido_syumoku.py:12
+#: .\mst\admin\ido\ido_syumoku.py:72 .\mst\models\ido\ido_syumoku.py:12
 #: .\mst\models\ido\ido_syumoku.py:23 .\mst\models\ido\ido_syumoku.py:24
 #: .\mst\models\ido\ido_syumoku_screen.py:10
 msgid "異動種目"
 msgstr ""
 
-#: .\mst\admin\ido\ido_syumoku_screen.py:34
+#: .\mst\admin\ido\ido_syumoku_screen.py:32
 #: .\mst\models\ido\ido_syumoku_screen.py:11
 msgid "異動入力画面"
 msgstr ""
@@ -57,17 +57,17 @@ msgstr ""
 msgid "異動項目コード"
 msgstr ""
 
-#: .\mst\admin\ido\ido_type.py:28 .\mst\models\ido\ido_syumoku.py:16
+#: .\mst\admin\ido\ido_type.py:26 .\mst\models\ido\ido_syumoku.py:16
 #: .\mst\models\ido\ido_type.py:13 .\mst\models\product.py:21
 msgid "display order"
 msgstr "表示順"
 
-#: .\mst\admin\product.py:12
+#: .\mst\admin\product.py:11
 msgid "parent"
 msgstr "親"
 
-#: .\mst\admin\site.py:8 .\mst\admin\site.py:9 .\mst\admin\site.py:12
-#: .\mst\admin\site.py:17
+#: .\mst\admin\site.py:22 .\mst\admin\site.py:23 .\mst\admin\site.py:26
+#: .\mst\admin\site.py:31
 msgid "mstSite"
 msgstr "マスタデータ"
 
@@ -265,3 +265,6 @@ msgstr "状態"
 #: .\mst\models\project.py:30
 msgid "projects"
 msgstr "プロジェクト"
+
+#~ msgid "export csv"
+#~ msgstr "CSVエクスポート"

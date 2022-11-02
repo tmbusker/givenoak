@@ -5,12 +5,15 @@ from datetime import date
 from xlsxwriter.workbook import Workbook
 
 from django.http import HttpResponse
+from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from cmm.const import UTF8
 
 
 _logger = logging.getLogger(__name__)
 
+@admin.display(description=_('export csv'))
 def export_csv(modeladmin, request, queryset) -> HttpResponse:
     """CSV export処理"""
     # pylint: disable = unused-argument
@@ -37,6 +40,7 @@ def export_csv(modeladmin, request, queryset) -> HttpResponse:
     _logger.info('CSV file %s is exported successfully.', file_name)
     return response
 
+@admin.display(description=_('export excel'))
 def export_excel(modeladmin, request, queryset):
     """Excel export処理"""
     # pylint: disable = unused-argument
