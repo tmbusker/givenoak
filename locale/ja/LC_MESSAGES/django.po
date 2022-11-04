@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-02 15:15+0900\n"
+"POT-Creation-Date: 2022-11-04 10:02+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\jinji\admin\site.py:22 .\jinji\admin\site.py:23 .\jinji\admin\site.py:26
-#: .\jinji\admin\site.py:31
+#: .\jinji\admin\site.py:20 .\jinji\admin\site.py:21 .\jinji\admin\site.py:24
+#: .\jinji\admin\site.py:29
 msgid "jinji"
 msgstr ""
 

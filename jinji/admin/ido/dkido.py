@@ -17,7 +17,7 @@ class DkidoForm(SimpleModelForm):
         fields = ['ido_type', 'ido_syumoku', 'cshainno', 'cnamekna', 'cnameknj']
         
     class Media:
-        js = ('jinji/js/select_ido_type.js',)
+        js = ('cmm/js/cmm.js', 'jinji/js/select_ido_type.js', )
     
 class DkidoAdmin(CommonBaseTableAminMixin, admin.ModelAdmin):
     """AdminSiteでの表示をカスタマイズする"""

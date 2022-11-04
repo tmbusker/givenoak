@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-02 15:33+0900\n"
+"POT-Creation-Date: 2022-11-04 10:02+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr "階層"
 msgid "parent organization"
 msgstr "上位組織"
 
-#: .\cmm\admin\person.py:15 .\cmm\models\employee.py:23
+#: .\cmm\admin\person.py:14 .\cmm\models\employee.py:23
 #: .\cmm\models\employee.py:47
 msgid "employee"
 msgstr "職員"
@@ -113,24 +113,24 @@ msgstr ""
 "エラー発生件数が指定制限を超えたため、%(file_name)sのインポート処理を中止しま"
 "す。"
 
-#: .\cmm\csv\csv_import.py:111
+#: .\cmm\csv\csv_import.py:112
 msgid "Newly imported row."
 msgstr "新規インポート行"
 
-#: .\cmm\csv\csv_import.py:117
+#: .\cmm\csv\csv_import.py:118
 msgid "Update existing row."
 msgstr "既存行の更新"
 
-#: .\cmm\csv\csv_import.py:161 .\cmm\csv\csv_import.py:165
+#: .\cmm\csv\csv_import.py:163 .\cmm\csv\csv_import.py:167
 #, python-format
 msgid "Duplicated with another row.[row no: %(row_no)s.]"
 msgstr "%(row_no)s行目と重複しております。"
 
-#: .\cmm\csv\csv_import_admin.py:23
+#: .\cmm\csv\csv_import_admin.py:22
 msgid "File to upload"
 msgstr "ファイルアップロード"
 
-#: .\cmm\csv\csv_import_admin.py:66
+#: .\cmm\csv\csv_import_admin.py:65
 #: .\cmm\templates\admin\change_list_object_tools.html:15
 #: .\cmm\templates\cmm\change_list_with_csv_import.html:17
 #: .\cmm\templates\cmm\csv_import.html:9
@@ -139,7 +139,8 @@ msgstr "ファイルアップロード"
 msgid "Import %(name)s"
 msgstr "%(name)sのインポート"
 
-#: .\cmm\csv\csv_import_admin.py:105
+#: .\cmm\csv\csv_import_admin.py:104
+#, python-format
 msgid ""
 "Import result: imported %(imp)s rows, skipped %(skip)s rows and discardeded: "
 "%(dis)s rows."
