@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from os import path
+import os
 from pathlib import Path
 from django.conf.locale.ja import formats as ja_formats
 import ldap
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%(dkfxmq46r$mryz#80q)i6&(r=e9w&4hk_lvy@416$7)hjl!1'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
     'mst',
     'simple_history',
     'jinji',
@@ -52,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -149,6 +153,10 @@ AUTH_LDAP_ALWAYS_UPDATE_USER = True
 AUTH_LDAP_FIND_GROUP_PERMS = False
 AUTH_LDAP_CACHE_TIMEOUT = 3600
 
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -192,9 +200,9 @@ LOCALE_PATHS = (
 USE_THOUSAND_SEPARATOR = True
 NUMBER_GROUPING = (3, 0)
 
-ja_formats.DATE_FORMAT = 'Y/m/d'                    # default: 'Y�Nn��j��'
-ja_formats.DATETIME_FORMAT = 'Y/m/d H:i:s'          # default: 'Y�Nn��j��G:i'
-ja_formats.SHORT_DATETIME_FORMAT = 'Y/m/d H:i'      # default: 'Y/m/d G:i'
+ja_formats.DATE_FORMAT = 'Y/m/d'
+ja_formats.DATETIME_FORMAT = 'Y/m/d H:i:s'
+ja_formats.SHORT_DATETIME_FORMAT = 'Y/m/d H:i'
 
 ja_formats.DATE_INPUT_FORMATS = ['%Y/%m/%d', '%Y-%m-%d', '%Y%m%d']
 
