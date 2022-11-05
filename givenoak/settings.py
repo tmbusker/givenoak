@@ -17,6 +17,8 @@ from django.conf.locale.ja import formats as ja_formats
 import ldap
 from django_auth_ldap.config import LDAPSearch
 
+from env import set_env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+set_env()
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -153,6 +156,7 @@ AUTH_LDAP_ALWAYS_UPDATE_USER = True
 AUTH_LDAP_FIND_GROUP_PERMS = False
 AUTH_LDAP_CACHE_TIMEOUT = 3600
 
+# Cross-Origin Resource Sharing
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
