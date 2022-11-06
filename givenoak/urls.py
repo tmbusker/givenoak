@@ -18,11 +18,12 @@ from django.urls import path, include
 # from django.views.generic.base import RedirectView
 from rest_framework import routers
 
-from cmm.views import UserViewSet
+from cmm.views import GroupViewSet, UserViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -135,18 +135,13 @@ AUTHENTICATION_BACKENDS = [
     "django_auth_ldap.backend.LDAPBackend",
 ]
 
-# LDAP設定
-AUTH_LDAP_SERVER_URI = 'ldap://192.168.20.103:389/'
-AUTH_LDAP_BIND_DN = 'CN=Auth user,OU=tokyo,DC=tokyo,DC=scientia,DC=co,DC=jp'
-AUTH_LDAP_BIND_PASSWORD = 'p09olp09ol'
-AUTH_LDAP_USER_SEARCH = LDAPSearch('dc=tokyo,dc=scientia,dc=co,dc=jp', ldap.SCOPE_SUBTREE, '(sAMAccountName=%(user)s)')
-
+# 本番設定はenv.pyにある
 # AUTH_LDAP_SERVER_URI = 'ldap://192.168.20.74/'
 # AUTH_LDAP_BIND_DN = 'cn=admin,dc=shiga-u,dc=ac,dc=jp'
 # AUTH_LDAP_BIND_PASSWORD = 'password'
-# AUTH_LDAP_USER_SEARCH = LDAPSearch('dc=shiga-u,dc=ac,dc=jp', ldap.SCOPE_SUBTREE, '(uid=%(user)s)')
 
-AUTH_LDAP_CONNECTION_OPTIONS = { ldap.OPT_DEBUG_LEVEL: 1, ldap.OPT_REFERRALS: 0, } 
+AUTH_LDAP_USER_SEARCH = LDAPSearch('dc=shiga-u,dc=ac,dc=jp', ldap.SCOPE_SUBTREE, '(uid=%(user)s)')
+AUTH_LDAP_CONNECTION_OPTIONS = { ldap.OPT_DEBUG_LEVEL: 1, ldap.OPT_REFERRALS: 0, }
 AUTH_LDAP_USER_ATTR_MAP = {
     'first_name': 'givenName',
     'last_name': 'sn',
@@ -209,6 +204,11 @@ ja_formats.DATETIME_FORMAT = 'Y/m/d H:i:s'
 ja_formats.SHORT_DATETIME_FORMAT = 'Y/m/d H:i'
 
 ja_formats.DATE_INPUT_FORMATS = ['%Y/%m/%d', '%Y-%m-%d', '%Y%m%d']
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 LOGGING = {
     'version': 1,
