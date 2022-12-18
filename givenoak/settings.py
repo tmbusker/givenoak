@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from os import path
+import os
 from pathlib import Path
 from django.conf.locale.ja import formats as ja_formats
 import ldap
 from django_auth_ldap.config import LDAPSearch
+
+from env import set_env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%(dkfxmq46r$mryz#80q)i6&(r=e9w&4hk_lvy@416$7)hjl!1'
+set_env()
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
     'mst',
     'simple_history',
     'jinji',
@@ -52,6 +58,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -128,18 +135,13 @@ AUTHENTICATION_BACKENDS = [
     "django_auth_ldap.backend.LDAPBackend",
 ]
 
-# LDAP設定
-AUTH_LDAP_SERVER_URI = 'ldap://192.168.20.103:389/'
-AUTH_LDAP_BIND_DN = 'CN=Auth user,OU=tokyo,DC=tokyo,DC=scientia,DC=co,DC=jp'
-AUTH_LDAP_BIND_PASSWORD = 'p09olp09ol'
-AUTH_LDAP_USER_SEARCH = LDAPSearch('dc=tokyo,dc=scientia,dc=co,dc=jp', ldap.SCOPE_SUBTREE, '(sAMAccountName=%(user)s)')
-
+# 本番設定はenv.pyにある
 # AUTH_LDAP_SERVER_URI = 'ldap://192.168.20.74/'
 # AUTH_LDAP_BIND_DN = 'cn=admin,dc=shiga-u,dc=ac,dc=jp'
 # AUTH_LDAP_BIND_PASSWORD = 'password'
-# AUTH_LDAP_USER_SEARCH = LDAPSearch('dc=shiga-u,dc=ac,dc=jp', ldap.SCOPE_SUBTREE, '(uid=%(user)s)')
 
-AUTH_LDAP_CONNECTION_OPTIONS = { ldap.OPT_DEBUG_LEVEL: 1, ldap.OPT_REFERRALS: 0, } 
+AUTH_LDAP_USER_SEARCH = LDAPSearch('dc=shiga-u,dc=ac,dc=jp', ldap.SCOPE_SUBTREE, '(uid=%(user)s)')
+AUTH_LDAP_CONNECTION_OPTIONS = { ldap.OPT_DEBUG_LEVEL: 1, ldap.OPT_REFERRALS: 0, }
 AUTH_LDAP_USER_ATTR_MAP = {
     'first_name': 'givenName',
     'last_name': 'sn',
@@ -148,6 +150,11 @@ AUTH_LDAP_USER_ATTR_MAP = {
 AUTH_LDAP_ALWAYS_UPDATE_USER = True
 AUTH_LDAP_FIND_GROUP_PERMS = False
 AUTH_LDAP_CACHE_TIMEOUT = 3600
+
+# Cross-Origin Resource Sharing
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -192,11 +199,16 @@ LOCALE_PATHS = (
 USE_THOUSAND_SEPARATOR = True
 NUMBER_GROUPING = (3, 0)
 
-ja_formats.DATE_FORMAT = 'Y/m/d'                    # default: 'Y�Nn��j��'
-ja_formats.DATETIME_FORMAT = 'Y/m/d H:i:s'          # default: 'Y�Nn��j��G:i'
-ja_formats.SHORT_DATETIME_FORMAT = 'Y/m/d H:i'      # default: 'Y/m/d G:i'
+ja_formats.DATE_FORMAT = 'Y/m/d'
+ja_formats.DATETIME_FORMAT = 'Y/m/d H:i:s'
+ja_formats.SHORT_DATETIME_FORMAT = 'Y/m/d H:i'
 
 ja_formats.DATE_INPUT_FORMATS = ['%Y/%m/%d', '%Y-%m-%d', '%Y%m%d']
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 LOGGING = {
     'version': 1,

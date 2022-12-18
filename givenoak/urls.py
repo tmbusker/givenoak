@@ -15,13 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic.base import RedirectView
+# from django.views.generic.base import RedirectView
+from rest_framework import routers
+
+from cmm.views import GroupViewSet, UserViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('commonsite/', cmmSite.urls, name='commonsite'),
     # path('mastersite/', mstSite.urls, name='mastersite'),
     path('jinji/', include('jinji.urls')),
-    path('', RedirectView.as_view(url='/jinji')),
+    # path('', RedirectView.as_view(url='/jinji')),
     # path('', RedirectView.as_view(url='/admin')),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
